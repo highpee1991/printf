@@ -1,23 +1,22 @@
-#include <stdi.h>
+#include <stdio.h>
 #include <stdarg.h>
 
 /**
- * _print_char - Prints a single character to the standard output
+ * _print_character - Prints a single character to the standard output
  * @c: The character to be printed
  *
  * Return: Number of characters printed (1 if successful, 0 if error)
  */
-static int _print_character(char c)
+static void _print_character(char c)
 {
 	putchar(c);
-	return;
 }
 
 /**
- * _print_str - Prints a string to the standard output
- * @str: The string to be printed
+ * _print_string - Prints a string to the standard output
+ * @string: The string to be printed
  *
- * Return: Number of characters printed (excluding the null terminator)
+ * Return: Number of characters printed (excluding the null terminator).
  */
 static int _print_string(char *string)
 {
@@ -27,12 +26,14 @@ static int _print_string(char *string)
 	}
 
 	int chars_printable = 0;
+
 	while (*string)
 	{
-		chars_printable += _print_character(*string);
+		_print_character(*string);
+		chars_printable++;
 		string++;
 	}
-	return chars_printable;
+	return (chars_printable);
 }
 
 /**
@@ -44,6 +45,7 @@ static int _print_string(char *string)
 int _printf(const char *format, ...)
 {
 	va_list list;
+
 	va_start(list, format);
 
 	int chars_printable = 0;
@@ -75,5 +77,5 @@ int _printf(const char *format, ...)
 		format++;
 	}
 	va_end(list);
-	return chars_printable;
+	return (chars_printable);
 }
