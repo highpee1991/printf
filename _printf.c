@@ -16,7 +16,7 @@ static void _print_character(char c)
  * _print_string - Prints a string to the standard output
  * @string: The string to be printed
  *
- * Return: Number of characters printed (excluding the null terminator)
+ * Return: Number of characters printed (excluding the null terminator).
  */
 static int _print_string(char *string)
 {
