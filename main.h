@@ -55,9 +55,9 @@ int _octal(va_list arg_list, char output_buffer[],
 int _hexadecimal(va_list arg_list, char output_buffer[],
 		int format_flags, int field_width, int precision_val,
 		int length_mod);
-int _hexadecimal_upper(va_list arg_list, char output_buffer[],
-		int format_flags, int field_width, int precision_val,
-		int length_mod);
+int _hexade_upper(va_list arg_list,
+                char output_buf[], int format_fl,
+                int field_wid, int prec_val, int len_mod);
 int print_hexade(va_list arg_list, char map_to[],
 		char output_buffer[], int format_flags,
 		char flag_char, int field_width,

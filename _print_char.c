@@ -15,7 +15,7 @@ int _char(va_list arg_list, char output_buffer[],
 		int active_flags, int field_width,
 		int precision_spec, int size_spec)
 {
-	char c = va_arg(arg_list, int);
+	char cm = va_arg(arg_list, int);
 
 	return (handle_write_char(c, output_buffer,
 		active_flags, field_width, precision_spec, size_spec));
