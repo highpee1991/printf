@@ -22,33 +22,45 @@ typedef struct Flags
 	bool flag3;
 } Flags;
 
-int _print(const char *format, ...);
-int _char(va_list arg_list, char output_buffer[],
-		int active_flags, int field_width,
-		int precision_spec, int size_spec);
-int _buffer(char buffer[], int *buff_ind);
-int _string(va_list arg_list, char output_buffer[],
-		int active_flags, int field_width,
-		int precision_spec, int size_spec);
-int _percent(va_list args, char buffer[],
+int _printf(const char *format, ...);
+int get_flags(const char *format, int *index);
+int get_width(const char *format, int *index, va_list args);
+int get_precision(const char *format, int *index, va_list args);
+int get_size(const char *format, int *index);
+int handle_print(const char *format, int *index, va_list args, char buffer[],
 		int flags, int width, int precision, int size);
+
+/* Function prototypes for print functions */
+int print_buffer(char buffer[], int *buff_ind);
+int print_char(va_list arg_list, char output_buffer[],
+                int active_flags, int field_width,
+                int precision_spec, int size_spec);
+int print_string(va_list arg_list, char output_buffer[],
+                int active_flags, int field_width,
+                int precision_spec, int size_spec);
+int print_percent(va_list args, char buffer[],
+                int flags, int width, int precision, int size);
 int print_intergers(va_list arg_list, char buffer[],
 		int format_flags, int field_width,
-		int precision, int length_modifier)
+		int precision, int length_modifier);
 int _binary(va_list arg_list, char buffer[],
 		int format_flags, int field_width,
 		int precision, int length_modifier);
-int _unsigned(va_list types, char buffer[],
-		int flags, int width, int precision, int size);
+int _unsigned(va_list arg_list, char output_buffer[],
+		int format_flags, int field_width,
+		int precision_val, int length_mod);
 int _octal(va_list arg_list, char output_buffer[],
+	int format_flags, int field_width,
+	int precision_val, int length_mod);
+int _hexadecimal(va_list arg_list, char output_buffer[],
 		int format_flags, int field_width, int precision_val,
 		int length_mod);
-int _hexadecimal(va_list arg_list, char output_buffer[],
-		int format_flags, int field_width,
-		int precision_val, int length_mod);
 int _hexadecimal_upper(va_list arg_list, char output_buffer[],
-		int format_flags, int field_width,
+		int format_flags, int field_width, int precision_val,
+		int length_mod);
+int print_hexade(va_list arg_list, char map_to[],
+		char output_buffer[], int format_flags,
+		char flag_char, int field_width,
 		int precision_val, int length_mod);
-int print_hexade(va_list arg_list, char map_to[], char output_buffer[],
-		int format_flags, char flag_char, int field_width,
+
 #endif /* _MAIN_H */
