@@ -19,7 +19,6 @@ UNUSED(buffer);
 UNUSED(format_flags);
 UNUSED(field_width);
 UNUSED(precision);
-UNUSED(precision);
 UNUSED(length_modifier);
 num = va_arg(arg_list, unsigned int);
 mask = 214783648;/* (2 ^ 31) */
