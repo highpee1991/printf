@@ -34,7 +34,7 @@ int _percent(va_list args, char buffer[],
 		int flags, int width, int precision, int size);
 int print_intergers(va_list arg_list, char buffer[],
 		int format_flags, int field_width,
-		int precision, int length_modifier);
+		int precision, int length_modifier)
 int _binary(va_list arg_list, char buffer[],
 		int format_flags, int field_width,
 		int precision, int length_modifier);
